@@ -18,10 +18,16 @@ The pin's state can be read without blocking by calling `Read`:
 ```c
 MyInput.Read();
 ```
-You can also block execution until the pin has reached a desired state by calling `WaitForState`:
+
+You can also require the input to first enter the opposite state before the desired one:
+```c
+MyInput.WaitForPress(false|true);
+```
+If you want execution to continue, even without waiting for the opposite state, call `WaitForState`:
 ```c
 MyInput.WaitForState(false|true);
 ```
+
 **Note:**
 - Interrupt registering is required for this function to work, this is enabled by default unless explicitly disable in the pin's code declaration.
 - There may be a delay of detection of input state change through `WaitForState` while the CPU is a deep-sleep wait-for-interrupt state.
