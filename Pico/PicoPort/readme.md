@@ -33,7 +33,7 @@ To define an input (replacing `PIN_NUMBER` with the GPIO pin number):
 
 PinOutput MyOutput(PIN_NUMBER [,false|true]);
 ```
-The initial output state can also be set by providing as second, though optional, parameter of boolean (false = off, true = on). Defaults to false.
+The output logic an be inverted through a second, though optional, parameter of boolean (false = off, true = on). Defaults to false.
 
 And the output can be turned on or off by calling `Set`:
 ```c
