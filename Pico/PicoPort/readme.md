@@ -33,7 +33,7 @@ And the output can be turned on or off by calling `Set`:
 ```c
 MyOutput.Set(false|true);
 ```
-## PWMPin
+## PWM Pin
 To define a PWM pin (replacing `PIN_NUMBER` with the GPIO pin number):
 ```c
 #include "pin_pwm.h"
