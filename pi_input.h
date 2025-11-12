@@ -7,7 +7,7 @@ struct PinInput : Pin{
 	PinInput(uint8_t p,bool irq=true):Pin(p){
 		gpio_set_dir(_p,GPIO_IN);
 		gpio_pull_up(_p);
-		subscribe_irq(irq);
+		if(irq) subscribe_irq(irq);
 	}
 	bool Read(){
 		return !gpio_get(_p);
