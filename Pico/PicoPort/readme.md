@@ -70,6 +70,15 @@ MyPWM.SetResolution(0 ... 255);
 - Setting a duty time higher than the resolution value will result in the output being always on.
 - If using multiple PWM outputs, some pins share the same PWM resolution register, and calling `SetResolution` will affect all pins that share that register.
 
+## Reset Pin
+To define a device reset pin (replacing `PIN_NUMBER` with the GPIO pin number):
+```c
+#include "pin_reset.h"
+
+PinPWM MyPWM(PIN_NUMBER);
+```
+This pin type does not expose any function calls and operates passively once-declared.
+
 ## Design Notes
 For predictable behaviour, all pin declarations made using these libraries should be declared outside of any and all function blocks.
 ## Tricks
