@@ -9,11 +9,11 @@ struct PinInput : Pin{
 		gpio_pull_up(_p);
 		if(irq) subscribe_irq(irq);
 	}
-	bool Read(){
+	bool Get(){
 		return !gpio_get(_p);
 	}
 	void WaitForState(bool s=true){
-		while(Read()!=s) __wfi();
+		while(Get()!=s) __wfi();
 	}
 	void WaitForPress(bool s=true){
 		WaitForState(!s);
