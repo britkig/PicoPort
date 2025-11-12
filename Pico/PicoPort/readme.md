@@ -86,7 +86,7 @@ PinPWM MyPWM(PIN_NUMBER);
 ```
 This pin type does not expose any callable functions and operates passively once-declared.
 
-# Design Notes
+# Coding Considerations
 For predictable behaviour, all pin declarations made using these libraries should be declared outside of any and all function blocks.
 # Tricks
 You can declare multiple pins of the same type by declaring an array instead of one per line, followed by the pin numbers, comma-separated, in curly-brackets:
