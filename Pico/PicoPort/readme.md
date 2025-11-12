@@ -14,12 +14,12 @@ PinInput MyInput(PIN_NUMBER [, false|true]);
 ```
 An optional second parameter can be provided to enable or disable interrupt handling on the pin; some function calls listed below may behave eratically without it. Defaults to `true`.
 
-The pin's state can be read without blocking by calling `Read`:
+The pin's current state can be read without blocking by calling `Read`:
 ```c
 MyInput.Read();
 ```
 
-You can also require the input to first enter the opposite state before the desired one:
+To have the CPU enter a deep sleep state until the input is in a triggered or non-triggered state, call `WaitForPress`:
 ```c
 MyInput.WaitForPress(false|true);
 ```
@@ -29,6 +29,7 @@ MyInput.WaitForState(false|true);
 ```
 
 **Note:**
+- **For components like buttons, you should add additional components to mitigate contact bounce.**
 - Interrupt registering is required for this function to work, this is enabled by default unless explicitly disable in the pin's code declaration.
 - There may be a delay of detection of input state change through `WaitForState` while the CPU is a deep-sleep wait-for-interrupt state.
 
