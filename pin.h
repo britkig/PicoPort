@@ -14,10 +14,9 @@ protected:
 #define PICOPORT_C {8,9,10,11}
 #define PICOPORT_CD {8,9,10,11,12,13,14,15}
 #define PICOPORT_D {12,13,14,15}
-#define PICOPORT_DE {12,13,14,15,16,17,18,19}
-//	WARNING: Ports D and E do not share same side of Pico module.
+//  WARNING: DE not defined due to not sharing same side of Pico module.
 #define PICOPORT_E {16,17,18,19}
 #define PICOPORT_EF {16,17,18,19,20,21,22,26}
 #define PICOPORT_F {20,21,22,26}
+//  WARNING: FG not defined due to not sharing sharing same physical or pin-count specs.
 #define PICOPORT_G {27,28}
-//	WARNING: Ports F and G have a one-pin gap between them
