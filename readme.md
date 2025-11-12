@@ -18,7 +18,7 @@ MyInput.Read();
 ```
 You can also block execution until the pin has reached a desired state by calling `WaitForState`:
 ```c
-MyInput.WaitForState(true|false);
+MyInput.WaitForState(false|true);
 ```
 ## Output Pin
 To define an input (replacing `PIN_NUMBER` with the GPIO pin number):
@@ -26,6 +26,10 @@ To define an input (replacing `PIN_NUMBER` with the GPIO pin number):
 #include "pin_input.h"
 
 PinInput MyOutput(PIN_NUMBER);
+```
+And the output can be turned on or off by calling `Set`:
+```c
+MyInput.Set(false|true);
 ```
 ## Tricks
 You can declare multiple pins of the same type by declaring an array instead of one per line, followed by the pin numbers, comma-separated, in curly-brackets:
